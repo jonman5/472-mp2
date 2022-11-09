@@ -1,4 +1,4 @@
-from dirorient.orientation import Orientation
+from directionorientation.orientation import Orientation
 
 
 class Vehicle(object):
@@ -9,6 +9,13 @@ class Vehicle(object):
         self.end_location = {}
         self.main_vehicle = main_vehicle
         self.occupied_locations = []
+        self.fuel_level = 100
+
+    def set_fuel_level(self, level):
+        self.fuel_level = level
+
+    def get_fuel_level(self):
+        return self.fuel_level
 
     def set_start_location(self, x, y):
         """Set start location of the object."""
