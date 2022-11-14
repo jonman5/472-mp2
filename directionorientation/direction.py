@@ -2,5 +2,7 @@ from enum import Enum
 
 
 class Direction(Enum):
-    FORWARD = 'FORWARD'
-    BACKWARD = 'BACKWARD'
+    DOWN = 'DOWN'
+    UP = 'UP'
+    LEFT = 'LEFT'
+    RIGHT = 'RIGHT'
