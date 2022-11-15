@@ -19,7 +19,7 @@ class GameBoard(object):
         return self.grid
 
     def add_vehicle(self, vehicle):
-        if self.vehicles.get(vehicle.name) is not None:
+        if self.vehicles.get(vehicle.name) is None:
             self.vehicles[vehicle.name] = vehicle
         for location in vehicle.get_occupied_locations():
             x = location['x']

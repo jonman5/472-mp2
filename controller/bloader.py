@@ -37,35 +37,35 @@ class BLoader(object):
 
     def parse_to_objects(self, content, params):
         vehicles = {}
-
-        for row_index, line in enumerate(content):
-            for column_index, letter in enumerate(line):
-
+        # BBBJCCH..J.KHAAJ.K..IDDLEEI..L....GG
+        for row in range(6):
+            for column in range(6):
+                letter = content[0][(row*6)+column]
                 if letter != '.' and letter != 'A':
                     if letter not in vehicles:
                         vehicle = Vehicle(name=letter)
-                        vehicle.set_start_location(column_index, row_index)
+                        vehicle.set_start_location(row, column)
                         vehicles[letter] = vehicle
                     else:
                         vehicle = vehicles[letter]
-                        vehicle.set_end_location(column_index, row_index)
+                        vehicle.set_end_location(row, column)
 
                 if letter == 'A':
                     if letter not in vehicles:
                         vehicle = Vehicle(name=letter, main_vehicle=True)
-                        vehicle.set_start_location(column_index, row_index)
+                        vehicle.set_start_location(row, column)
                         vehicles[letter] = vehicle
                     else:
                         vehicle = vehicles[letter]
-                        vehicle.set_end_location(column_index, row_index)
+                        vehicle.set_end_location(row, column)
 
         # set fuel level
         if params is not None:
             for key, value in params.items():
                 vehicles[key].set_fuel_level(value)
 
-        board_width = len(content[0])
-        board_height = len(content)
+        board_width = 6
+        board_height = 6
         self.game_board = GameBoard(board_height, board_width)
 
         for key, vehicle in sorted(vehicles.items()):

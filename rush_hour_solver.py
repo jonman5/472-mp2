@@ -1,6 +1,7 @@
 import sys
 import time
 from controller.bloader import BLoader
+from move_finder import MoveFinder
 from controller.bloader import BLoader
 from view.console_v import ConsoleView
 
@@ -27,7 +28,7 @@ class RushHourSolver(object):
 
             # Find the solution to the game board
             start_time = time.perf_counter()
-            solver = BLoader(game_board, self.console_view)
+            moves = MoveFinder.find_moves(game_board)
             # solution = solver.get_solution()
             end_time = time.perf_counter()
 

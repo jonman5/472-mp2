@@ -33,9 +33,9 @@ class ConsoleView(object):
         self.stdscr.addstr('\n')
         for row in range(height):
             for column in range(width):
-                vehicle = grid[column][row]
+                vehicle = grid[row][column]
                 if vehicle:
-                    self.stdscr.addstr('%s ' % vehicle.get_name())
+                    self.stdscr.addstr('%s ' % vehicle)
                 else:
                     self.stdscr.addstr('. ')
 
