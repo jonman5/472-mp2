@@ -15,11 +15,11 @@ class MoveFinder(object):
             for col, spot in enumerate(row):
                 if spot == '.':
                     if row_index != 0:
-                        move_down = cls.__test_move_down(gameboard, row_index, col)
+                        move_down = cls.__test_move_down(gameboard, col, row_index)
                         if move_down is not None:
                             moves.append(move_down)
                     if row_index != 5:
-                        move_up = cls.__test_move_up(gameboard, row_index, col)
+                        move_up = cls.__test_move_up(gameboard, col, row_index)
                         if move_up is not None:
                             moves.append(move_up)
                     # if col != 0:
@@ -36,7 +36,7 @@ class MoveFinder(object):
     # Check if the vehicle above spot(x, y) can move down, if so return that move
     def __test_move_down(cls, gameboard: GameBoard, x, y):
         # Find vehicle directly above spot of interest and return Move which moves it down to spot of interest
-        spot_above = gameboard.get_spot_at(x - 1, y)
+        spot_above = gameboard.get_spot_at(x, y - 1)
         if spot_above.isalpha():
             vehicle_above: Vehicle = gameboard.vehicles.get(spot_above)
             if vehicle_above.get_orientation() == Orientation.VERTICAL and vehicle_above.fuel_level > 0:
@@ -47,9 +47,9 @@ class MoveFinder(object):
         # If spot above is not a vehicle:
         # Find the closest vehicle above spot of interest and return Move which moves it down to spot of interest
         free_spots_above = 0
-        while spot_above == '.' and (x - free_spots_above - 2) >= 0:
+        while spot_above == '.' and (y - free_spots_above - 2) >= 0:
             free_spots_above += 1
-            spot_above = gameboard.get_spot_at(x - free_spots_above - 1, y)
+            spot_above = gameboard.get_spot_at(x, y - free_spots_above - 1)
         if spot_above.isalpha():
             vehicle_above: Vehicle = gameboard.vehicles.get(spot_above)
             if vehicle_above.get_orientation() == Orientation.VERTICAL and vehicle_above.fuel_level > free_spots_above:
@@ -60,7 +60,7 @@ class MoveFinder(object):
     # Check if the vehicle below spot(x, y) can move up, if so return that move
     def __test_move_up(cls, gameboard: GameBoard, x, y):
         # Find vehicle directly below spot of interest and return Move which moves it up to spot of interest
-        spot_below = gameboard.get_spot_at(x + 1, y)
+        spot_below = gameboard.get_spot_at(x, y + 1)
         if spot_below.isalpha():
             vehicle_below: Vehicle = gameboard.vehicles.get(spot_below)
             if vehicle_below.get_orientation() == Orientation.VERTICAL and vehicle_below.fuel_level > 0:
@@ -72,9 +72,9 @@ class MoveFinder(object):
         # If spot below is not a vehicle:
         # Find the closest vehicle below spot of interest and return Move which moves it up to spot of interest
         free_spots_below = 0
-        while spot_below == '.' and (x + free_spots_below + 2) < 6:
+        while spot_below == '.' and (y + free_spots_below + 2) < 6:
             free_spots_below += 1
-            spot_below = gameboard.get_spot_at(x + free_spots_below + 1, y)
+            spot_below = gameboard.get_spot_at(x, y + free_spots_below + 1)
         if spot_below.isalpha():
             vehicle_below: Vehicle = gameboard.vehicles.get(spot_below)
             if vehicle_below.get_orientation() == Orientation.VERTICAL and vehicle_below.fuel_level > free_spots_below:

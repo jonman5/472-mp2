@@ -24,7 +24,7 @@ class GameBoard(object):
         for location in vehicle.get_occupied_locations():
             x = location['x']
             y = location['y']
-            self.grid[x][y] = vehicle.name
+            self.grid[y][x] = vehicle.name
 
     def get_height(self):
         return self.height
@@ -33,4 +33,4 @@ class GameBoard(object):
         return self.width
 
     def get_spot_at(self, x, y):
-        return self.grid[x][y]
+        return self.grid[y][x]

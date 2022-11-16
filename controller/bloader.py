@@ -44,20 +44,20 @@ class BLoader(object):
                 if letter != '.' and letter != 'A':
                     if letter not in vehicles:
                         vehicle = Vehicle(name=letter)
-                        vehicle.set_start_location(row, column)
+                        vehicle.set_start_location(column, row)
                         vehicles[letter] = vehicle
                     else:
                         vehicle = vehicles[letter]
-                        vehicle.set_end_location(row, column)
+                        vehicle.set_end_location(column, row)
 
                 if letter == 'A':
                     if letter not in vehicles:
                         vehicle = Vehicle(name=letter, main_vehicle=True)
-                        vehicle.set_start_location(row, column)
+                        vehicle.set_start_location(column, row)
                         vehicles[letter] = vehicle
                     else:
                         vehicle = vehicles[letter]
-                        vehicle.set_end_location(row, column)
+                        vehicle.set_end_location(column, row)
 
         # set fuel level
         if params is not None:

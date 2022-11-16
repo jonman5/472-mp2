@@ -39,13 +39,13 @@ class Vehicle(object):
         """Get the locations that are being occupied by the objects."""
         occupied_locations = []
 
-        if self.get_orientation() == Orientation.VERTICAL:
+        if self.get_orientation() == Orientation.HORIZONTAL:
             delta = self.end_location['x'] - self.start_location['x']
             for index in range(0, delta + 1):
                 location = {'x': self.start_location['x'] + index, 'y': self.start_location['y']}
                 occupied_locations.append(location)
 
-        if self.get_orientation() == Orientation.HORIZONTAL:
+        if self.get_orientation() == Orientation.VERTICAL:
             delta = self.end_location['y'] - self.start_location['y']
             for index in range(0, delta + 1):
                 location = {'x': self.start_location['x'], 'y': self.start_location['y'] + index}
@@ -64,10 +64,10 @@ class Vehicle(object):
         return self.main_vehicle
 
     def get_orientation(self):
-        if self.start_location['x'] == self.end_location['x']:
+        if self.start_location['y'] == self.end_location['y']:
             return Orientation.HORIZONTAL
 
-        if self.start_location['y'] == self.end_location['y']:
+        if self.start_location['x'] == self.end_location['x']:
             return Orientation.VERTICAL
 
     def move_forward(self):
