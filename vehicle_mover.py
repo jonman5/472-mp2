@@ -30,4 +30,5 @@ def __move_vehicle(vehicle: Vehicle, move: Move):
         case 'LEFT':
             start_location['x'] -= count
             end_location['x'] -= count
+    vehicle.set_fuel_level(vehicle.get_fuel_level() - count)
     return vehicle
