@@ -14,5 +14,8 @@ class Move(object):
     def get_move_direction(self):
         return self.move_direction
 
+    def get_count(self):
+        return self.count
+
     def get_heuristic(self):
         return self.heuristic
