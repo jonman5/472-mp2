@@ -2,12 +2,12 @@ from model.vehicle import Vehicle
 
 
 class GameBoard(object):
-    def __init__(self, height, width):
+    def __init__(self, vehicles: {}):
         self.grid = []
-        self.height = height
-        self.width = width
+        self.height = 6
+        self.width = 6
+        self.vehicles = vehicles
         self.generate_grid()
-        self.vehicles = {}
 
     def generate_grid(self):
         for row in range(self.height):
@@ -26,6 +26,9 @@ class GameBoard(object):
             y = location['y']
             self.grid[y][x] = vehicle.name
 
+    def get_vehicles(self):
+        return self.vehicles
+
     def get_height(self):
         return self.height
 
@@ -34,3 +37,6 @@ class GameBoard(object):
 
     def get_spot_at(self, x, y):
         return self.grid[y][x]
+
+    def __eq__(self, other):
+        return self.grid == other.grid

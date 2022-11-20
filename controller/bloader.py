@@ -64,9 +64,8 @@ class BLoader(object):
             for key, value in params.items():
                 vehicles[key].set_fuel_level(value)
 
-        board_width = 6
-        board_height = 6
-        self.game_board = GameBoard(board_height, board_width)
+        # Initialize gameboard with vehicles
+        self.game_board = GameBoard(vehicles)
 
         for key, vehicle in sorted(vehicles.items()):
             self.game_board.add_vehicle(vehicle)
