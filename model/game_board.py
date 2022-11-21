@@ -14,6 +14,8 @@ class GameBoard(object):
             self.grid.append([])
             for column in range(self.width):
                 self.grid[row].append('.')
+        for vehicle in self.vehicles.values():
+            self.add_vehicle(vehicle)
 
     def get_grid(self):
         return self.grid

@@ -16,24 +16,28 @@ class MoveFinder(object):
                 if spot == '.':
                     if row_index != 0:
                         move_down = cls.__test_move_down(gameboard, col, row_index)
-                        vehicle_fuel_level = gameboard.get_vehicles()[move_down.get_vehicle_name()].get_fuel_level()
-                        if move_down is not None and (vehicle_fuel_level - move_down.get_count() >= 0):
-                            moves.append(move_down)
+                        if move_down is not None:
+                            vehicle_fuel_level = gameboard.get_vehicles()[move_down.get_vehicle_name()].get_fuel_level()
+                            if vehicle_fuel_level - move_down.get_count() >= 0:
+                                moves.append(move_down)
                     if row_index != 5:
                         move_up = cls.__test_move_up(gameboard, col, row_index)
-                        vehicle_fuel_level = gameboard.get_vehicles()[move_up.get_vehicle_name()].get_fuel_level()
-                        if move_up is not None and (vehicle_fuel_level - move_up.get_count() >= 0):
-                            moves.append(move_up)
+                        if move_up is not None:
+                            vehicle_fuel_level = gameboard.get_vehicles()[move_up.get_vehicle_name()].get_fuel_level()
+                            if vehicle_fuel_level - move_up.get_count() >= 0:
+                                moves.append(move_up)
                     if col != 0:
                         move_right = cls.__test_move_right(gameboard, col, row_index)
-                        vehicle_fuel_level = gameboard.get_vehicles()[move_right.get_vehicle_name()].get_fuel_level()
-                        if move_right is not None and (vehicle_fuel_level - move_right.get_count() >= 0):
-                            moves.append(move_right)
+                        if move_right is not None:
+                            vehicle_fuel_level = gameboard.get_vehicles()[move_right.get_vehicle_name()].get_fuel_level()
+                            if vehicle_fuel_level - move_right.get_count() >= 0:
+                                moves.append(move_right)
                     if col != 5:
                         move_left = cls.__test_move_left(gameboard, col, row_index)
-                        vehicle_fuel_level = gameboard.get_vehicles()[move_left.get_vehicle_name()].get_fuel_level()
-                        if move_left is not None and (vehicle_fuel_level - move_left.get_count() >= 0):
-                            moves.append(move_left)
+                        if move_left is not None:
+                            vehicle_fuel_level = gameboard.get_vehicles()[move_left.get_vehicle_name()].get_fuel_level()
+                            if vehicle_fuel_level - move_left.get_count() >= 0:
+                                moves.append(move_left)
         return moves
 
     @classmethod

@@ -1,8 +1,10 @@
 import sys
 import time
 from controller.bloader import BLoader
+from model.node import Node
 from move_finder import MoveFinder
 from controller.bloader import BLoader
+from node_searcher import NodeSearcher
 from view.console_v import ConsoleView
 
 
@@ -28,8 +30,9 @@ class RushHourSolver(object):
 
             # Find the solution to the game board
             start_time = time.perf_counter()
-            moves = MoveFinder.find_moves(game_board)
-            # solution = solver.get_solution()
+            # moves = MoveFinder.find_moves(game_board)
+            start: Node = Node(gameboard=game_board)
+            solution = NodeSearcher("UCS").execute_search(start)
             end_time = time.perf_counter()
 
             # if solution:
