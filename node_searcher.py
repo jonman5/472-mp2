@@ -5,6 +5,7 @@ from model.node import Node
 from model.prioritized_node import PrioritizedNode
 from move_finder import MoveFinder
 from queue import PriorityQueue
+from search import Search
 
 
 class NodeSearcher(object):
@@ -15,6 +16,7 @@ class NodeSearcher(object):
         self.closed_list = []
         self.heuristic_used = heuristic_to_use
         self.algorithm = algo
+        self.search = Search(algo, heuristic_to_use)
 
     def execute_search(self, initial_node: Node, heuristic_to_use=None):
         match self.algorithm:
