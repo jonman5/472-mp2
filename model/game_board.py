@@ -2,6 +2,7 @@ from model.vehicle import Vehicle
 
 
 class GameBoard(object):
+
     def __init__(self, vehicles: {}):
         self.grid = []
         self.height = 6
