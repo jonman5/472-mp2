@@ -1,7 +1,12 @@
+from model.game_board import GameBoard
 from vehicle_mover import *
 
 
 class Node(object):
+    state: GameBoard
+    move: Move
+    parent_node: "Node"
+
     def __init__(self, move=None, parent_node=None, *, gameboard=None):
         if gameboard is not None:
             self.state = gameboard
@@ -13,6 +18,7 @@ class Node(object):
             return
         self.state = move_vehicle_on_board(parent_node.get_state(), move)
         self.move_step_count = move.get_count()
+        self.move = move
         self.parent_node = parent_node
         self.depth = parent_node.get_depth() + 1
         self.heuristic = 0
@@ -25,7 +31,7 @@ class Node(object):
         return self.move
 
     def get_step_count(self):
-        return self.path_cost
+        return self.move_step_count
 
     def get_depth(self):
         return self.depth
