@@ -67,9 +67,6 @@ class BLoader(object):
         # Initialize gameboard with vehicles
         self.game_board = GameBoard(vehicles)
 
-        for key, vehicle in sorted(vehicles.items()):
-            self.game_board.add_vehicle(vehicle)
-
     def get_game_board(self):
         """Return the loaded game board."""
         return self.game_board

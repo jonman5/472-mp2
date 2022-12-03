@@ -11,6 +11,7 @@ class Vehicle(object):
         self.occupied_locations = []
         self.fuel_level = 100
         self.orientation = None
+        self.removed_by_valet = False
 
     def set_fuel_level(self, level):
         self.fuel_level = level

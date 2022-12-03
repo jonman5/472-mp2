@@ -9,12 +9,6 @@ def move_vehicle_on_board(gameboard: GameBoard, move: Move):
     vehicle_to_move: Vehicle = copy.deepcopy(vehicles[move.get_vehicle_name()])
     moved_vehicle = __move_vehicle(vehicle_to_move, move)
 
-    if __check_valet(moved_vehicle):
-        # Perform free valet service
-        vehicles.remove(vehicles[move.get_vehicle_name()])
-        updated_gameboard = GameBoard(vehicles)
-        return updated_gameboard
-
     vehicles[moved_vehicle.get_name()] = moved_vehicle
     updated_gameboard = GameBoard(vehicles)
     return updated_gameboard
@@ -40,12 +34,3 @@ def __move_vehicle(vehicle: Vehicle, move: Move):
 
     vehicle.set_fuel_level(vehicle.get_fuel_level() - count)
     return vehicle
-
-
-def __check_valet(vehicle: Vehicle):
-    if vehicle.orientation == "Horizontal":
-        if vehicle.end_location['y'] == 2 and vehicle.end_location['x'] == 5:
-            return True
-        elif vehicle.start_location['y'] == 2 and vehicle.start_location['x'] == 5:
-            return True
-        return False

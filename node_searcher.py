@@ -1,6 +1,5 @@
+import copy
 from time import perf_counter
-from typing import Type
-
 from helper.heuristic_helper import *
 from model.node import Node
 from model.prioritized_node import PrioritizedNode
@@ -161,8 +160,11 @@ class NodeSearcher(object):
             self.open_list.put(PrioritizedNode(new_node.get_depth() + new_node.heuristic, new_node))
 
     def __extract_solution_path(self):
-        current_node = self.solution_node
+        current_node = copy.deepcopy(self.solution_node)
+        self.search.solved_state = current_node.get_state()
         self.search.solution_path.append(current_node)
-        while self.solution_node.parent_node is not None:
+        while current_node.parent_node is not None:
+            current_node = copy.deepcopy(current_node.parent_node)
             self.search.solution_path.append(current_node)
+        self.search.solution_path.pop()
         self.search.solution_path.reverse()

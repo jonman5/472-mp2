@@ -2,6 +2,7 @@ from directionorientation.direction import Direction
 
 
 class Move(object):
+    move_direction: Direction
     def __init__(self, vehicle_name, direction, count, heuristic):
         self.vehicle_name = vehicle_name
         self.move_direction = direction
