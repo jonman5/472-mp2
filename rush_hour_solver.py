@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 from controller.bloader import BLoader
@@ -18,6 +19,12 @@ class RushHourSolver(object):
         board_name = self.console_view.load_board_prompt()
         params_name = self.console_view.load_params_prompt()
 
+        # Create directory to store output files if it does not already exist
+        current_dir_path = os.getcwd()
+        output_dir_path = os.path.join(current_dir_path, r'output_files')
+        if not os.path.exists(output_dir_path):
+            os.mkdir(output_dir_path)
+
         if board_name:
             # Load game board from file
             loader = BLoader('./datatxt/%s.txt' % board_name, './datatxt/%s.txt' % params_name)
@@ -25,8 +32,6 @@ class RushHourSolver(object):
 
             # Display game board
             self.console_view.display_loaded_grid(game_board.get_grid(), game_board.get_height(), game_board.get_width())
-
-            """-------------TO DO.---------------------------"""
 
             # Find the solution to the game board
             start_time = time.perf_counter()

@@ -82,19 +82,19 @@ class BLoader(object):
                 raise ValueError('The file is empty! Please select a file with a correct data format.')
 
             line_length = len(content[0])
-            red_car_size = 0
+            ambulance_size = 0
             for line in content:
                 if line_length != len(line):
-                    raise ValueError('The data format is not correct! All the text lines need to be the same length.')
+                    raise ValueError('The input format is not correct! All the text lines need to be the same length.')
 
                 if re.sub(r'[A-Za-z.]+', '', line):
-                    raise ValueError('The data format is not correct! Only letters and "." are allowed.')
+                    raise ValueError('The input format is not correct! Only letters and "." are allowed.')
 
                 if 'A' in line:
-                    red_car_size += 1
+                    ambulance_size += 1
 
-            if red_car_size == 0:
-                raise ValueError('The data format is not correct! The red car is not set.')
+            if ambulance_size == 0:
+                raise ValueError('The input format is not correct! The ambulance vehicle is not present.')
 
         except ValueError as expression:
             print(expression)
