@@ -1,4 +1,6 @@
+from directionorientation.orientation import Orientation
 from model.node import Node
+from model.vehicle import Vehicle
 
 # h1: The number of blocking vehicles.
 # h2: The number of blocked positions.
@@ -51,3 +53,33 @@ def __calculate_h2(node: Node):
 def __calculate_h3(node: Node):
     h2 = __calculate_h2(node)
     return h2*h3_lambda
+
+def __calculate_h4(node: Node):
+    grid = node.get_state().get_grid()
+    row_3: list = grid()[2]
+    row_3_reversed = row_3.copy()
+    row_3_reversed.reverse()
+    end_of_A_reverse_index = row_3_reversed.index('A')
+    blocking_vehicles: list[Vehicle] = []
+    for i in range(1, end_of_A_reverse_index + 1):
+        if i > 1 and row_3[-i] != '.':
+            if row_3[-i] != row_3[-(i - 1)]:
+                blocking_vehicles.append(node.state.vehicles[row_3[-i]])
+        elif row_3[-i] != '.':
+            blocking_vehicles.append(node.state.vehicles[row_3[-i]])
+    blocking_vehicles_totally_blocked = 0
+    for blocking_vehicle in blocking_vehicles:
+        if blocking_vehicle.orientation == Orientation.VERTICAL:
+            if blocking_vehicle.start_location['y'] == 0:
+                if blocking_vehicle.end_location['y'] < 5:
+                    spot_to_check = {}
+                    spot_to_check['x'] = blocking_vehicle.end_location['x']
+                    spot_to_check['y'] = blocking_vehicle.end_location['y'] + 1
+                    if not grid[spot_to_check['y']][spot_to_check['x']] == '.':
+                        blocking_vehicles_totally_blocked += 1
+                else:
+                    blocking_vehicles_totally_blocked += 1
+            else:
+                spot_to_check = {}
+                spot_to_check['x'] = blocking_vehicle.start_location['x']
+                spot_to_check['y'] = blocking_vehicle.start_location['y'] + 1
