@@ -39,7 +39,7 @@ class NodeSearcher(object):
             case "A/A*":
                 start_time = perf_counter()
                 self.open_list = PriorityQueue()
-                self.solution_node = self.__A_Astar_search()
+                self.solution_node = self.__A_Astar_search(initial_node, heuristic_to_use)
                 self.search.execution_time = perf_counter() - start_time
         if self.solution_node is not None:
             self.__extract_solution_path()
