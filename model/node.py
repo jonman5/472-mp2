@@ -1,4 +1,3 @@
-from model.game_board import GameBoard
 from vehicle_mover import *
 
 
