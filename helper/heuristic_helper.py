@@ -8,24 +8,23 @@ h3_lambda = 2
 
 
 def calculate_heuristic(heuristic_to_use, node: Node):
+    calculated_heuristic = 0
     match heuristic_to_use:
-        case 'h1':
-            h1 = __calculate_h1(node)
-            node.set_heuristic(h1)
-        case 'h2':
-            h2 = __calculate_h2(node)
-            node.set_heuristic(h2)
-        case 'h3':
-            h3 = __calculate_h3(node)
-            node.set_heuristic(h3)
-        case 'h4':
+        case 1:
+            calculated_heuristic = __calculate_h1(node)
+        case 2:
+            calculated_heuristic = __calculate_h2(node)
+        case 3:
+            calculated_heuristic = __calculate_h3(node)
+        case 4:
             pass
-    return 0
+    return calculated_heuristic
 
 
 def __calculate_h1(node: Node):
-    row_3: list = Node.get_state().get_grid()[2]
-    row_3_reversed = row_3.copy().reverse()
+    row_3: list = node.get_state().get_grid()[2]
+    row_3_reversed = row_3.copy()
+    row_3_reversed.reverse()
     end_of_A_reverse_index = row_3_reversed.index('A')
     blocking_vehicles_count = 0
     for i in range(1, end_of_A_reverse_index + 1):
@@ -38,10 +37,15 @@ def __calculate_h1(node: Node):
 
 
 def __calculate_h2(node: Node):
-    row_3: list = Node.get_state().get_grid()[2]
-    row_3_reversed = row_3.copy().reverse()
+    row_3: list = node.get_state().get_grid()[2]
+    row_3_reversed = row_3.copy()
+    row_3_reversed.reverse()
     end_of_A_reverse_index = row_3_reversed.index('A')
-    return end_of_A_reverse_index
+    blocking_positions_count = 0
+    for i in range(1, end_of_A_reverse_index + 1):
+        if row_3[-i] != '.':
+            blocking_positions_count += 1
+    return blocking_positions_count
 
 
 def __calculate_h3(node: Node):

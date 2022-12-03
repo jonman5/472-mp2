@@ -48,7 +48,7 @@ class RushHourSolver(object):
 
             # Find the solution to the game board
             start: Node = Node(gameboard=game_board)
-            solution = NodeSearcher("UCS").execute_search(start)
+            solution = NodeSearcher("GBFS").execute_search(start, 1)
             solution.puzzle_number = puzzle_no
             write_solution_to_solution_file(solution, output_dir_path)
 

@@ -13,18 +13,15 @@ class NodeSearcher(object):
     search: SearchInstance
     solution_node: Node
 
-    puzzle_no = 1
-
-    def __init__(self, algo, heuristic_to_use=0):
+    def __init__(self, algo):
         self.solution_node = None
         self.open_list = PriorityQueue()
         self.closed_list = []
-        self.heuristic_used = heuristic_to_use
         self.algorithm = algo
-        self.search = SearchInstance(algo, heuristic_to_use)
-        self.search.puzzle_number = self.puzzle_no
+        self.search = None
 
-    def execute_search(self, initial_node: Node, heuristic_to_use=None):
+    def execute_search(self, initial_node: Node, heuristic_to_use=0):
+        self.search = SearchInstance(self.algorithm, heuristic_to_use)
         self.search.initial_state = initial_node.get_state()
         match self.algorithm:
             case "UCS":
