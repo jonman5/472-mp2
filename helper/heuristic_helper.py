@@ -52,7 +52,8 @@ def __calculate_h2(node: Node):
 
 def __calculate_h3(node: Node):
     h2 = __calculate_h2(node)
-    return h2*h3_lambda
+    return h2 * h3_lambda
+
 
 def __calculate_h4(node: Node):
     grid = node.get_state().get_grid()
@@ -67,19 +68,63 @@ def __calculate_h4(node: Node):
                 blocking_vehicles.append(node.state.vehicles[row_3[-i]])
         elif row_3[-i] != '.':
             blocking_vehicles.append(node.state.vehicles[row_3[-i]])
-    blocking_vehicles_totally_blocked = 0
+
+    count_blocking_vehicles_totally_blocked = 0
     for blocking_vehicle in blocking_vehicles:
         if blocking_vehicle.orientation == Orientation.VERTICAL:
-            if blocking_vehicle.start_location['y'] == 0:
-                if blocking_vehicle.end_location['y'] < 5:
-                    spot_to_check = {}
-                    spot_to_check['x'] = blocking_vehicle.end_location['x']
-                    spot_to_check['y'] = blocking_vehicle.end_location['y'] + 1
-                    if not grid[spot_to_check['y']][spot_to_check['x']] == '.':
-                        blocking_vehicles_totally_blocked += 1
-                else:
-                    blocking_vehicles_totally_blocked += 1
+            if blocking_vehicle.end_location['y'] > blocking_vehicle.start_location['y']:
+                start_spot_to_check = {}
+                start_spot_to_check['x'] = blocking_vehicle.start_location['x']
+                start_spot_to_check['y'] = blocking_vehicle.start_location['y'] - 1
+                end_spot_to_check = {}
+                end_spot_to_check['x'] = blocking_vehicle.end_location['x']
+                end_spot_to_check['y'] = blocking_vehicle.end_location['y'] + 1
+                if not start_spot_to_check['y'] < 0:
+                    if grid[start_spot_to_check['y']][start_spot_to_check['x']] == '.':
+                        continue
+                if not end_spot_to_check['y'] > 5:
+                    if grid[end_spot_to_check['y']][end_spot_to_check['x']] == '.':
+                        continue
             else:
-                spot_to_check = {}
-                spot_to_check['x'] = blocking_vehicle.start_location['x']
-                spot_to_check['y'] = blocking_vehicle.start_location['y'] + 1
+                start_spot_to_check = {}
+                start_spot_to_check['x'] = blocking_vehicle.start_location['x']
+                start_spot_to_check['y'] = blocking_vehicle.start_location['y'] + 1
+                end_spot_to_check = {}
+                end_spot_to_check['x'] = blocking_vehicle.end_location['x']
+                end_spot_to_check['y'] = blocking_vehicle.end_location['y'] - 1
+                if not start_spot_to_check['y'] > 5:
+                    if grid[start_spot_to_check['y']][start_spot_to_check['x']] == '.':
+                        continue
+                if not end_spot_to_check['y'] < 0:
+                    if grid[end_spot_to_check['y']][end_spot_to_check['x']] == '.':
+                        continue
+        else:
+            continue
+            # if blocking_vehicle.end_location['x'] > blocking_vehicle.start_location['x']:
+            #     start_spot_to_check = {}
+            #     start_spot_to_check['x'] = blocking_vehicle.start_location['x'] - 1
+            #     start_spot_to_check['y'] = blocking_vehicle.start_location['y']
+            #     end_spot_to_check = {}
+            #     end_spot_to_check['x'] = blocking_vehicle.end_location['x'] + 1
+            #     end_spot_to_check['y'] = blocking_vehicle.end_location['y']
+            #     if not start_spot_to_check['x'] < 0:
+            #         if grid[start_spot_to_check['y']][start_spot_to_check['x']] == '.':
+            #             continue
+            #     if not end_spot_to_check['x'] > 5:
+            #         if grid[end_spot_to_check['y']][end_spot_to_check['x']] == '.':
+            #             continue
+            # else:
+            #     start_spot_to_check = {}
+            #     start_spot_to_check['x'] = blocking_vehicle.start_location['x'] + 1
+            #     start_spot_to_check['y'] = blocking_vehicle.start_location['y']
+            #     end_spot_to_check = {}
+            #     end_spot_to_check['x'] = blocking_vehicle.end_location['x'] - 1
+            #     end_spot_to_check['y'] = blocking_vehicle.end_location['y']
+            #     if not start_spot_to_check['x'] > 5:
+            #         if grid[start_spot_to_check['y']][start_spot_to_check['x']] == '.':
+            #             continue
+            #     if not end_spot_to_check['x'] < 0:
+            #         if grid[end_spot_to_check['y']][end_spot_to_check['x']] == '.':
+            #             continue
+        count_blocking_vehicles_totally_blocked += 1
+    return count_blocking_vehicles_totally_blocked + len(blocking_vehicles)
