@@ -17,7 +17,7 @@ def execute_all_algorithms_and_heuristics(start_node: Node) -> list[SearchInstan
     solutions.append(NodeSearcher("UCS").execute_search(start_node))
     for h in range(1, 5):
         solutions.append(NodeSearcher("GBFS", h).execute_search(start_node))
-        solutions.append(NodeSearcher("A/A*", h).execute_search(start_node))
+        solutions.append(NodeSearcher("A_Astar", h).execute_search(start_node))
     return solutions
 
 
@@ -48,7 +48,7 @@ class RushHourSolver(object):
 
             # Find the solution to the game board
             start: Node = Node(gameboard=game_board)
-            solution = NodeSearcher("GBFS").execute_search(start, 1)
+            solution = NodeSearcher("A_Astar").execute_search(start, 4)
             solution.puzzle_number = puzzle_no
             write_solution_to_solution_file(solution, output_dir_path)
 

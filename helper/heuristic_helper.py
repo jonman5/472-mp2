@@ -57,7 +57,7 @@ def __calculate_h3(node: Node):
 
 def __calculate_h4(node: Node):
     grid = node.get_state().get_grid()
-    row_3: list = grid()[2]
+    row_3 = grid[2]
     row_3_reversed = row_3.copy()
     row_3_reversed.reverse()
     end_of_A_reverse_index = row_3_reversed.index('A')

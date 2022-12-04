@@ -36,7 +36,7 @@ class NodeSearcher(object):
                 self.solution_node = self.__greedy_best_first_search(initial_node, heuristic_to_use)
                 self.search.execution_time = perf_counter() - start_time
 
-            case "A/A*":
+            case "A_Astar":
                 start_time = perf_counter()
                 self.open_list = PriorityQueue()
                 self.solution_node = self.__A_Astar_search(initial_node, heuristic_to_use)
