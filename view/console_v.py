@@ -1,9 +1,4 @@
 import curses
-import math
-
-from directionorientation.direction import Direction
-from directionorientation.orientation import Orientation
-
 
 class ConsoleView(object):
 
@@ -48,18 +43,6 @@ class ConsoleView(object):
         self.stdscr.clear()
         self.stdscr.addstr('Which board do you want to use? (filename without extension ".txt") \n')
         self.stdscr.addstr('Make sure the board file is in the directory "datatxt". \n')
-        self.stdscr.addstr('\n')
-        self.stdscr.addstr('Filename ', curses.A_BOLD)
-        self.stdscr.addstr('(excl. extension ".txt"): ')
-        self.stdscr.refresh()
-        curses.echo()
-        return self.stdscr.getstr(50).decode()
-
-    def load_params_prompt(self):
-        """Ask the user which board to load."""
-        self.stdscr.clear()
-        self.stdscr.addstr('Which params do you want to use? (filename without extension ".txt") \n')
-        self.stdscr.addstr('Make sure the params file is in the directory "datatxt". \n')
         self.stdscr.addstr('\n')
         self.stdscr.addstr('Filename ', curses.A_BOLD)
         self.stdscr.addstr('(excl. extension ".txt"): ')

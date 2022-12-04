@@ -9,8 +9,8 @@ GH..LL
 
 Car fuel available: B:2, J:100, C:100, A:100, I:100, M:100, G:100, D:100, K:100, H:100, L:1, 
 
-Runtime: 13.563821599993389
-Search path length: 296
+Runtime: 0.15702450001845136
+Search path length: 13
 Solution path length: 4
 Solution path: L left 1; M down 1; I right 1; A right 4; 
 

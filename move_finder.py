@@ -96,7 +96,7 @@ class MoveFinder(object):
         spot_above = gameboard.get_spot_at(x - 1, y)
         if spot_above.isalpha():
             vehicle_above: Vehicle = gameboard.vehicles.get(spot_above)
-            if vehicle_above.get_orientation() == Orientation.HORIZONTAL and vehicle_above.fuel_level > 0:
+            if vehicle_above.get_orientation() == Orientation.HORIZONTAL and (vehicle_above.fuel_level > 0):
                 heuristic = 1
                 return Move(vehicle_above.name, Direction.RIGHT, 1, heuristic)
             else:
