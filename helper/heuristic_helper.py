@@ -19,7 +19,7 @@ def calculate_heuristic(heuristic_to_use, node: Node):
         case 3:
             calculated_heuristic = __calculate_h3(node)
         case 4:
-            pass
+            calculated_heuristic = __calculate_h4(node)
     return calculated_heuristic
 
 
