@@ -19,16 +19,16 @@ G..JEE
 FF.J..
 
 # demo 1.3
-JBBCCC
+JBB.CC
 JDD..M
 JAAL.M
-FFKL.N
-..KGGN
+FF.L.N
+...GGN
 .HH...
 
 # demo 1.4
-BB...M
-CCDD.M
+BB....
+..DD.M
 AAKL.M
 J.KLEE
 J.GG..
@@ -39,8 +39,8 @@ JHH.II
 J.BBCC
 JIDDL.
 JIAAL.
-EEK.L.
-..KFF.
+EE..L.
+...FF.
 .GGHH. G1 J3
 
 # demo 1.6
@@ -69,19 +69,19 @@ FHHKK.
 
 # demo 1.9
 .BBB.M
-CCDD.M
-AA.L.M
-J..LEE
+CCDDEM
+AA.LEM
+J..L..
 J.GG..
-JHHHII B4 J0 G2
+.HH.II B4 J0 G2
 
 # demo 1.10
 IJBBCC
-IJDDL.
-IJAAL.
-EEK.L.
-..KFF.
-GG.HH. F0 G6
+IJDD.L
+IJAA.L
+EEK..L
+..KFFF
+GG.HH. K1 G6
 
 # demo 1.11
 BBG..H
@@ -92,35 +92,35 @@ EAAG.I
 DD.... C3 D0
 
 # demo 1.12
-..I...
+..ICC.
 BBI.K.
 GHAAKL
-GHDDKL
+GHDD.L
 G..J..
 FF.JEE
 
 # demo 1.13
-JBBCCC
+J..CCC
 J..DDM
 JAAL.M
-FFKL.N
-..KGGN
-.HH...
+FF.L.N
+...GGN
+.HH.BB
 
 # demo 1.14
-.BBB.M
+.BBB..
 CCDD.M
-AAKL.M
-J.KLEE
+AA.L.M
+J..LEE
 J.GG..
 JHHHII J0 B4
 
 # demo 1.15
-IJBBCC
-IJDDL.
-IJAAL.
+IJ..CC
+IJDDLF
+IJAALF
 EEK.L.
-..K.FF
+..K.BB
 .GGHH. F0 G6
 
 # demo 1.16
@@ -153,18 +153,18 @@ CCDD.M
 AA.L.M
 J..LEE
 J.GG..
-J...II M3 I1
+J...II M3 G1
 
 # demo 1.20
-IJBBCC
+IJ..CC
 IJDDL.
-IJAAL.
-EEK.L.
-..KFF.
-GG.HH. F0 G6
+IJAALB
+EE..LB
+...FF.
+GG.HH. C0 F1
 
 # demo 1.21
-BB.G.H
+..BB.H
 E..G.H
 EAAG.I
 ..FCCI
@@ -175,7 +175,7 @@ EAAG.I
 ..I...
 BBI.K.
 GHAAKL
-GHKL
+GHK..L
 G..JEE
 FF.JDD
 
@@ -184,72 +184,72 @@ JBBCCC
 JDD..M
 JAAL.M
 ..KL.N
-FFKGGN
-.HH...
+FFK..N
+.HH.GG
 
 # demo 1.24
-BBB...
+BB....
 CCDD.M
-AAKL.M
-J.KL.M
+AAK..M
+J.K..M
 J.GGEE
-JHHHII J0 B4
+JHH.II J0 M2
 
 # demo 1.25
 IJBBCC
 IJ.DDL
-IJAAL.
-EEK.L.
+IJAA.L
+..K.EE
 ..KFF.
-.GGHH. F0 G6
+.GGHH. I0
 
 # demo 1.26
-BBG..H
-E.G..H
+BB...H
+E..G.H
 EAAG.I
 ..FCCI
 DDF..I
 ..F...
 
 # demo 1.27
-BBI...
+BBI.EE
 ..I.K.
 GHAAKL
 GHDDKL
-G..JEE
+G..J..
 FF.J..
 
 # demo 1.28
-JBBCCC
+JBB...
 J.DD.M
 JAAL.M
-FFKL.N
-..K..N
-.HHGG.
+FFKL..
+..KNN.
+.HHGG. M1
 
 # demo 1.29
-BBB...
-CCDD.M
-AAKL.M
-J.KL.M
-J.GGEE
-JHHHII J0 B4
+CBB...
+C.DD.M
+AAKLGM
+J.KLGM
+J...EE
+JHH.II B3
 
 # demo 1.30
 IJBB..
-IJDDCC
-IJAAL.
-EEK.L.
-..KFF.
-.GGHH. F0 G6
+IJ..CC
+IJAALD
+EEK.LD
+..KFFF
+.GGHH. F0
 
 # demo 1.31
 BB.G.H
 E..G.H
 EAAG.I
-DDF..I
-..FCCI
-..F...
+DD...I
+...CCI
+..FF..
 
 # demo 1.32
 ..I.K.
@@ -260,28 +260,28 @@ G..JEE
 FF.J..
 
 # demo 1.33
-JBBCCC
+.BBCCC
 JDD..M
 JAAL.M
 FFKL.N
 ..KGGN
-.HH...
+...HHH
 
 # demo 1.34
-BBB..M
-CCDD.M
-AAKL.M
-J.KLEE
+BBBD..
+CC.D.M
+AA.L.M
+J..LEE
 J.GG..
-JHHHII J0 B4
+JHHHII J0 M1
 
 # demo 1.35
-IJBBCC
-IJDDL.
-IJAAL.
-EEK.L.
-..KFFH
-.GG..H F0 G6
+I.BBCC
+IJDDLF
+IJAALF
+EEK.LH
+..K..H
+.GGG.. F0 G1
 
 # demo 1.36
 BB.G.H
@@ -296,8 +296,8 @@ DDF..I
 ..FF.L
 GHAAKL
 GH..KL
-G.BJEE
-..BJ..
+GHBBEE
+..JJ..
 
 # demo 1.38
 J..CCC
@@ -310,95 +310,95 @@ BB.GGN
 # demo 1.39
 .BB..M
 ..DD.M
-AAKL.M
-J.KLEE
+.AAL.M
+J..LEE
 J.GGCC
-J...II D1 B3
+J...II D1 B1
 
 # demo 1.40
-IJ..CC
-IJDDL.
-IJAAL.
-EEK.L.
-BBKFF.
-.GGHH. F0 G6
-
-# demo 1.41
-...G.H
-EBBG.H
-EAAG.I
-..FCCI
-DDF..I
-..F...
-
-# demo 1.42
-..I.DD
-BBI...
-GHAABL
-GH..BL
-G..JEE
-FF.J..
-
-# demo 1.43
-JBBCCC
-JDDGGM
-JAAL.M
-FFKL.N
-..KN..
-.HH...
-
-# demo 1.44
-BBB..M
-..DD.M
-AAKL.M
-J.KLEE
-J.GGCC
-JHHHII J0 B4
-
-# demo 1.45
-IJBB..
-IJDDL.
-IJAAL.
-EEK.L.
-C.KFF.
-CGGHH. F0 G6
-
-# demo 1.46
-BB.G.H
+..BB.H
 E..G.H
 EAAG.I
-DDF..I
+..FCCI
 ..F..I
-..FCC.
+..FDD.
+
+# demo 1.41
+..I...
+BBI.K.
+GHAAKL
+GHK..L
+G..JEE
+FF.JDD
+
+# demo 1.42
+JBBCCC
+JDD..M
+JAAL.M
+..KL.N
+FFK..N
+.HH.GG G0
+
+# demo 1.43
+....BB
+CCDD.M
+AAK..M
+J.K..M
+J.GGEE
+JHH.II M2
+
+# demo 1.44
+IJ..CC
+IJ.DDL
+IJAA.L
+..K.EE
+B.KFF.
+BGGHH. I0
+
+# demo 1.45
+BB.DDH
+E..G.H
+EAAG.I
+..CCCI
+..F..I
+..F...
+
+# demo 1.46
+BBI.EE
+..I.K.
+GHAAKL
+GHDDKL
+G..J..
+FF.J.. L1
 
 # demo 1.47
-BBIJ..
-I..JDD
-I..AAM
-GCCK.M
-GH.KL.
-GHFFL.
+JBB...
+J.DD.M
+JAALLM
+FFK...
+..KNN.
+.HHGG. M1
 
 # demo 1.48
-BBIJ..
-FFIJCC
-..IAAM
-GK...M
-GH.KL.
-GHLDD.
+CBB...
+C.DD.M
+AAKLGM
+J.KLGM
+J...EE
+JHH.II I1 D1
 
 # demo 1.49
-BBIJ..
-..IJCC
-..IAAM
-GDDK.M
-GH.K.L
-GH.FFL
+IJBB..
+IJ..CC
+IJAALD
+EEK.LD
+..KFFF
+.GGHH. F0
 
 # demo 1.50
-I..JJJ
-I.CC..
-AA.BBE
-GDDK.E
-GH.K.L
-GHFF.L
+BB.G.H
+E..G.H
+EAAG..
+...CCI
+DDF..I
+..F..I C2

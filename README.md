@@ -1,5 +1,6 @@
 # 472-mp2
 Mini Project 2 for COMP 472
+By team CSM-101
 
 Link to repo: https://github.com/jonman5/472-mp2
 
