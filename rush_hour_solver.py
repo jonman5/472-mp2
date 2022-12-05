@@ -42,12 +42,19 @@ class RushHourSolver(object):
             game_boards = loader.get_game_boards()
 
             for game_board in game_boards:
-                # Find the solution to the game board for each algorithm and each heuristic
-                start: Node = Node(gameboard=game_board)
-                solutions = execute_all_algorithms_and_heuristics(start)
-                for solution in solutions:
-                    solution.puzzle_number = puzzle_no
-                    write_solution_to_solution_file(solution, output_dir_path)
+                if puzzle_no < 25:
+                    # Find the solution to the game board for each algorithm and each heuristic
+                    start: Node = Node(gameboard=game_board)
+                    solutions = execute_all_algorithms_and_heuristics(start)
+                    # Write solutions found to solution files and CSV
+                    for solution in solutions:
+                        solution.puzzle_number = puzzle_no
+                        write_solution_to_solution_file(solution, output_dir_path)
+                        write_search_to_search_file(solution, output_dir_path)
+                    with open('results.csv', 'a') as fd:
+                        for solution in solutions:
+                            row = str(len(solution.solution_path)) + "," + str(len(solution.search_path)) + "," \
+                                  + str(solution.execution_time)
                 puzzle_no += 1
 
             # Display game board
