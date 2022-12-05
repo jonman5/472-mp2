@@ -29,9 +29,10 @@ class BLoader(object):
 
         split_line = line.split(" ")
         for i in range(1, len(split_line)):
-            vehicle_name = split_line[i][0]
-            fuel_level = split_line[i][1]
-            parameters[vehicle_name] = fuel_level
+            if len(split_line[i]) > 1:
+                vehicle_name = split_line[i][0]
+                fuel_level = split_line[i][1]
+                parameters[vehicle_name] = fuel_level
         return parameters
 
 
