@@ -1,0 +1,25 @@
+Initial board configuration: IB.J..IB.JCCI.AA..GDDK.EGH.KLEGHFFL.
+
+IB.J..
+IB.JCC
+I.AA..
+GDDK.E
+GH.KLE
+GHFFL.
+
+Car fuel available: I:100, B:100, J:100, C:100, A:100, M:100, G:100, D:100, K:100, E:100, H:100, L:100, F:100, 
+
+Runtime: 0.1101137999794446
+Search path length: 6
+Solution path length: 1
+Solution path: A right 2; 
+
+A right 2		98 IB.J..IB.JCCI...AAGDDK.EGH.KLEGHFFL.
+
+Final board configuration:
+IB.J..
+IB.JCC
+I...AA
+GDDK.E
+GH.KLE
+GHFFL.

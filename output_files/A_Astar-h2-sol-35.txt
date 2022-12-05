@@ -1,0 +1,13 @@
+No solution found!Initial board configuration: I...CCIJDD.FIJAALFEEK.LH..K..H.GGGBB
+
+I...CC
+IJDD.F
+IJAALF
+EEK.LH
+..K..H
+.GGGBB
+
+Car fuel available: I:100, C:100, J:100, D:0, F:0, A:100, L:100, E:100, K:100, H:100, G:0, B:100, 
+
+Runtime: 5.15140109998174
+Search path length: 277

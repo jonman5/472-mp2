@@ -1,0 +1,5 @@
+2 0 2  BB...HE..G.HEAAG.IDD...I...CCI..FF..
+3 1 2  BB.G.HE..G.HEAA..IDD...I...CCI..FF..
+2 2 0  BB.G.HE..G.HEAA...DD...I...CCI..FF.I
+3 1 2  BB...HE..G.HEAAG..DD...I...CCI..FF.I
+3 3 0  BB.G.HE..G.HE...AADD...I...CCI..FF.I

@@ -1,0 +1,7 @@
+3 0 3  ..BB.HE..G.HEAAG.IF..CCIF....I...DD.
+3 1 2  ..BB.HE..G.HEAAG..F..CCIF....I...DDI
+4 2 2  .BB..HE..G.HEAAG..F..CCIF....I...DDI
+3 3 0  .BBG.HE..G.HEAA...F..CCIF....I...DDI
+4 2 2  ..BB.HE..G.HEAAG..FCC..IF....I...DDI
+3 3 0  ..BB.HE....HEAA...FCCG.IF..G.I...DDI
+4 4 0  .BBG.HE..G.HE...AAF..CCIF....I...DDI

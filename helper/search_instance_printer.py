@@ -30,7 +30,7 @@ def write_search_to_search_file(search_instance: SearchInstance, output_path):
             line = "0 "
             if search_instance.algorithm == "A_Astar":
                 line = str(searched_node.get_depth() + searched_node.heuristic) + " "
-            line += str(searched_node.get_depth())
+            line += str(searched_node.get_depth()) + " "
             if search_instance.algorithm == "UCS":
                 line += "0  "
             else:
@@ -134,4 +134,4 @@ def add_final_configuration_to_solution_file(search_instance, solution_file):
 
 def create_file_name(search_instance: SearchInstance, filetype):
     return search_instance.algorithm + "-h" + str(search_instance.heuristic) + "-" + filetype + "-" + str(
-        search_instance.puzzle_number)
+        search_instance.puzzle_number) + ".txt"
